@@ -1,0 +1,55 @@
+import React from 'react'
+import * as BooksAPI from './BooksAPI';
+import BooksShelf from './components/BooksShelf/booksShelf';
+import './App.css'
+
+class BooksApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      /**
+       * TODO: Instead of using this state variable to keep track of which page
+       * we're on, use the URL in the browser's address bar. This will ensure that
+       * users can use the browser's back and forward buttons to navigate between
+       * p ages, as well as provide a good URL they can bookmark and share.
+       */
+
+    }
+  }
+  componentDidMount() {
+    // This is an 'update' API call to place a "dummy" book into the "none" shelf,
+    // API answers with updated view of our shelves (Book IDs only, sorted per shelf)
+    // I didn't want to use BooksAPI.getAll because it outputs a very big file
+    // that I didn't want to bother filter down or carry around as props.
+    // The app state is mostly made of a list of book ids,
+    // downloading the books details only when they get required.
+    // format of 'shelvesObject' here below:
+    // {"currentlyReading": ["nggnmAEACAAJ","sJf1vQAACAAJ"],"wantToRead": ["74XNzF_al3MC"],"read": ["jAUODAAAQBAJ","IOejDAAAQBAJ","1wy49i-gQjIC"]}
+    BooksAPI
+      .update({ id: 'dummy' }, 'none')
+      .then((shelvesObject) => this.setState({ ...shelvesObject }))
+      .then(() => console.log('App: component did mount, book shelves were just updated.'))
+      .catch((e) => {
+        console.log(e);
+        return []
+      })
+  }
+
+
+
+  render() {
+    return (
+      <div className="app">
+        <div className="list-books-title">
+          <h1>MyReads vikash chander</h1>
+        </div>
+        <div className="list-books">
+          <BooksShelf />
+        </div>
+
+      </div>
+    )
+  }
+}
+
+export default BooksApp;
