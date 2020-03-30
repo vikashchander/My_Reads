@@ -22,20 +22,19 @@ class BooksApp extends React.Component {
 
   render() {
     return (
+      <Router>
 
-
-      <div className="app">
-        <Switch>
-          <Route>
-            <BooksShelf />
-          </Route>
-          <Route exact path="/search">
-            <BooksSearch />
-          </Route>
-        </Switch>
-      </div>
-
-
+        <div className="app">
+          <Switch>
+            <Route exact path="/">
+              <BooksShelf />
+            </Route>
+            <Route exact path="/search/">
+              <BooksSearch />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }

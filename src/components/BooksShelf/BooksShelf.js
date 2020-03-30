@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import './BooksShelf.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+} from "react-router-dom";
+import '../../App.css';
 
 
 class BooksShelf extends React.Component {
@@ -16,7 +24,7 @@ class BooksShelf extends React.Component {
         return (
             <div className="list-books">
                 <div className="list-books-title">
-                    <h1>MyReads</h1>
+                    <h1>MyReads vikash</h1>
                 </div >
                 <div className="list-books-content">
                     <div>
@@ -169,8 +177,9 @@ class BooksShelf extends React.Component {
                         </div>
                     </div>
                 </div>
+
                 <div className="open-search">
-                    <a onClick={() => this.state.showSearchPage({ showSearchPage: true })}>Add a book</a>
+                    <Link to='/search/'>Add a book</Link>
                 </div>
             </div >
         )
