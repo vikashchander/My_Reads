@@ -4,33 +4,49 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import BooksShelf from './components/BooksShelf/BooksShelf';
 import BooksSearch from './components/BooksSearch/BooksSearch'
 import './App.css'
 class BooksApp extends React.Component {
-  state = {
-    /**
-     * TODO: Instead of using this state variable to keep track of which page
-     * we're on, use the URL in the browser's address bar. This will ensure that
-     * users can use the browser's back and forward buttons to navigate between
-     * pages, as well as provide a good URL they can bookmark and share.
-     */
-    showSearchPage: false
+  constructor(props) {
+    super(props)
+    this.state = {
+      shelvesObject: ['']
+    }
+
   }
+
+  componentWillMount() {
+
+    this.shelvesObjects();
+
+
+  }
+  shelvesObjects = () => {
+    BooksAPI
+      .update({ id: 'dummy' }, 'none')
+      .then((shelvesObject) => this.updateShelf({ shelvesObject }))
+      .then(() => console.log('App: component did mount, book shelves were just updated.'))
+      .catch((e) => {
+        console.log(e);
+        return []
+      })
+  }
+  updateShelf = (shelvesObject) => { this.setState({ ...shelvesObject }); console.log(`${shelvesObject}`) }
+
+
 
   render() {
     return (
       <Router>
-
         <div className="app">
           <Switch>
             <Route exact path="/">
-              <BooksShelf />
+              <BooksShelf shelfData={this.state.shelvesObject} updateBookShelf={this.updateShelf} />
             </Route>
             <Route exact path="/search/">
-              <BooksSearch />
+              <BooksSearch updateBookShelf={this.updateShelf} />
             </Route>
           </Switch>
         </div>
