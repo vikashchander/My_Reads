@@ -28,15 +28,12 @@ class EachBookShelf extends React.Component {
 
     handleChange(e) {
         let newShelf = e.target.value;
-        let previousShelf = this.state.shelf;  // so we can rollback the change later if API call fails
-        this.setState({ shelf: newShelf })   // hoping API call won't fail
+        let previousShelf = this.state.shelf;
+        this.setState({ shelf: newShelf })
         BooksAPI
-            .update({ 'id': this.state.id }, newShelf)   // API call
+            .update({ 'id': this.state.id }, newShelf)
             .then((shelvesObject) => this.props.updateBookShelf({ shelvesObject }))
-            // NB this updates the currentlyReading, read and wantToRead shelves, but not the searchResults shelf.
-            // This is why we had to do this.setState({shelf: newShelf}) a few lines earlier to manually upate the shelf state of this book
-            // so that the book status is shown correctly in the searchResults shelf
-            .catch(() => (this.setState({ shelf: previousShelf })))        // rollback if API call failed
+            .catch(() => (this.setState({ shelf: previousShelf })))
     }
 
 
