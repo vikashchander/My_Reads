@@ -32,7 +32,6 @@ class BooksApp extends React.Component {
     BooksAPI
       .update({ id: 'data' }, 'none')
       .then((shelvesObject) => this.updateShelf({ shelvesObject }))
-      .then(() => console.log('App: component did mount, book shelves were just updated.'))
       .catch((e) => {
         console.log(e);
         return []

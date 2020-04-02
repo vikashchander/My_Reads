@@ -16,14 +16,12 @@ class EachBookShelf extends React.Component {
             shelf: 'none',
 
         }
-        console.log('state run');
         this.handleChange = this.handleChange.bind(this)
     }
     componentDidMount() {
         BooksAPI.get(this.props.bookId).then(data => {
             this.setState({ ...data })
         })
-        console.log(`component didmount run`)
     }
 
     handleChange(e) {
