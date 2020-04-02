@@ -18,11 +18,16 @@ class BooksApp extends React.Component {
   }
 
   componentWillMount() {
-
     this.shelvesObjects();
-
-
+    this.allBooks();
   }
+
+  allBooks = () => {
+    BooksAPI
+      .getAll().then(allBooks => this.setState({ allBooks }));
+  }
+
+
   shelvesObjects = () => {
     BooksAPI
       .update({ id: 'data' }, 'none')
@@ -33,7 +38,9 @@ class BooksApp extends React.Component {
         return []
       })
   }
-  updateShelf = (shelvesObject) => { this.setState({ ...shelvesObject }); console.log(`${shelvesObject}`) }
+  updateShelf = (shelvesObject) => {
+    this.setState({ ...shelvesObject })
+  }
 
 
 
