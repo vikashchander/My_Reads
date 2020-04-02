@@ -19,14 +19,7 @@ class BooksApp extends React.Component {
 
   componentWillMount() {
     this.shelvesObjects();
-    this.allBooks();
   }
-
-  allBooks = () => {
-    BooksAPI
-      .getAll().then(allBooks => this.setState({ allBooks }));
-  }
-
 
   shelvesObjects = () => {
     BooksAPI
