@@ -22,7 +22,7 @@ class BooksShelf extends React.Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {
-                                        currentlyRead === undefined ? 'loading ....' :
+                                        currentlyRead === undefined ? <div className='bookshelf-loader'></div> :
                                             currentlyRead.map((data) =>
                                                 <EachBookShelf key={data} bookId={data} updateBookShelf={updateBookShelf} />
                                             )
@@ -35,10 +35,11 @@ class BooksShelf extends React.Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {
-                                        wantToRead === undefined ? 'loading ....' :
+                                        wantToRead === undefined ? <div className='bookshelf-loader'></div> :
                                             wantToRead.map((data) =>
                                                 <EachBookShelf key={data} bookId={data} updateBookShelf={updateBookShelf} />
                                             )
+                                           
                                     }
                                 </ol>
                             </div>
@@ -47,7 +48,7 @@ class BooksShelf extends React.Component {
                             <h2 className="bookshelf-title">Read</h2>
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
-                                    {Read === undefined ? 'loading ....' :
+                                    {Read === undefined ? <div className='bookshelf-loader'></div> :
                                         Read.map((data) => (
                                             Read.length === 0 ? 'No Books' :
                                                 <EachBookShelf key={data} bookId={data} updateBookShelf={updateBookShelf} />

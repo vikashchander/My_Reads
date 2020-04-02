@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210mm" height="297mm" enable-background="new" version="1.1" viewBox="0 0 744.09448819 1052.3622047" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(1.5945e-6 .6326)">
+  <g transform="matrix(.99213 0 0 1.0022 0 -2.3661)">
+   <rect y="1.7296" width="150" height="150" fill="#f60"/>
+   <rect y="1.7296" width="150" height="150" fill="#e9c6af"/>
+   <rect y="151.73" width="150" height="150" fill="#efa"/>
+   <rect y="301.73" width="150" height="150" fill="#ffd5d5"/>
+   <rect y="451.73" width="150" height="150" fill="#d5ffe6"/>
+   <rect y="601.73" width="150" height="150" fill="#ffd5d5"/>
+   <rect y="751.73" width="150" height="150" fill="#d7f4d7"/>
+   <rect y="901.73" width="150" height="150" fill="#d5e5ff"/>
+   <rect x="150" y="1.7296" width="150" height="150" fill="#faa"/>
+   <rect x="150" y="151.73" width="150" height="150" fill="#e3e2db"/>
+   <rect x="150" y="301.73" width="150" height="150" fill="#d5e5ff"/>
+   <rect x="150" y="451.73" width="150" height="150" fill="#dbe3de"/>
+   <rect x="150" y="601.73" width="150" height="150" fill="#f9f9f9"/>
+   <rect x="150" y="751.73" width="150" height="150" fill="#dee3db"/>
+   <rect x="150" y="901.73" width="150" height="150" fill="#efa"/>
+   <rect x="300" y="1.7296" width="150" height="150" fill="#f4d7d7"/>
+   <rect x="300" y="151.73" width="150" height="150" fill="#e9c6af"/>
+   <rect x="300" y="301.73" width="150" height="150" fill="#dbdee3"/>
+   <rect x="300" y="451.73" width="150" height="150" fill="#aef"/>
+   <rect x="300" y="601.73" width="150" height="150" fill="#fff6d5"/>
+   <rect x="300" y="751.73" width="150" height="150" fill="#d5e5ff"/>
+   <rect x="300" y="901.73" width="150" height="150" fill="#afc"/>
+   <rect x="450" y="1.7296" width="150" height="150" fill="#deaa87"/>
+   <rect x="450" y="151.73" width="150" height="150" fill="#fff6d5"/>
+   <rect x="450" y="301.73" width="150" height="150" fill="#d7f4ee"/>
+   <rect x="450" y="451.73" width="150" height="150" fill="#c8beb7"/>
+   <rect x="450" y="601.73" width="150" height="150" fill="#efa"/>
+   <rect x="450" y="751.73" width="150" height="150" fill="#fca"/>
+   <rect x="450" y="901.73" width="150" height="150" fill="#e9ddaf"/>
+   <rect x="600" y="1.7296" width="150" height="150" fill="#e9ddaf"/>
+   <rect x="600" y="151.73" width="150" height="150" fill="#faa"/>
+   <rect x="600" y="301.73" width="150" height="150" fill="#dbe3de"/>
+   <rect x="600" y="451.73" width="150" height="150" fill="#e3dedb"/>
+   <rect x="600" y="601.73" width="150" height="150" fill="#d5e5ff"/>
+   <rect x="600" y="751.73" width="150" height="150" fill="#e9afaf"/>
+   <rect x="600" y="901.73" width="150" height="150" fill="#f4d7d7"/>
+   <rect x="206.03" y="48.423" width="79.287" height="79.287" fill="#aef" stroke="#fff" stroke-width=".66275"/>
+   <rect x="310.48" y="169" width="79.287" height="79.287" fill="#aef" stroke="#fff" stroke-width=".66275"/>
+   <rect x="208.63" y="660.71" width="79.287" height="79.287" fill="#aef" stroke="#fff" stroke-width=".66275"/>
+   <rect x="612.12" y="762.19" width="79.287" height="79.287" fill="#aef" stroke="#fff" stroke-width=".66275"/>
+   <rect x="53.249" y="798.37" width="79.287" height="79.287" fill="#aef" stroke="#fff" stroke-width=".66275"/>
+   <rect x="59.28" y="311.87" width="79.287" height="79.287" fill="#aef" stroke="#fff" stroke-width=".66275"/>
+   <rect x="531.46" y="48.265" width="41.407" height="41.407" fill="#f4d7d7" stroke="#fff" stroke-width=".34612"/>
+   <rect x="463.11" y="390.02" width="41.407" height="41.407" fill="#f4d7d7" stroke="#fff" stroke-width=".34612"/>
+   <rect x="318.36" y="698.74" width="41.407" height="41.407" fill="#f4d7d7" stroke="#fff" stroke-width=".34612"/>
+   <rect x="543.52" y="546.83" width="41.407" height="41.407" fill="#f4d7d7" stroke="#fff" stroke-width=".34612"/>
+   <rect x="165.58" y="918.74" width="41.407" height="41.407" fill="#f4d7d7" stroke="#fff" stroke-width=".34612"/>
+   <rect x="165.58" y="798.22" width="41.407" height="41.407" fill="#f4d7d7" stroke="#fff" stroke-width=".34612"/>
+  </g>
+ </g>
+</svg>
