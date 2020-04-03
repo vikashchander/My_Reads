@@ -11,24 +11,27 @@ class BooksSearch extends React.Component {
         this.state = {
             query: '',
             results: [],
-
+            searchErr: false
         }
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(e) {
-        this.setState({ query: e.target.value.trim() });
-        if (e.target.value.trim()) {
-            BooksAPI.search(e.target.value.trim(), 20).then((results) => {
-                if (results.length > 0)
-                    this.setState({ results })
-            }
-            );
+        const query = e.target.value;
+        this.setState({ query });
+        if (query) {
+            BooksAPI.search(query.trim(), 20).then((results) => {
+                results.length > 0
+                    ? this.setState({ results, searchErr: false })
+                    : this.setState({ results: [], searchErr: true })
+            });
+        } else {
+            this.setState({ results: [], searchErr: false })
         }
     }
 
     render() {
-        const { results } = this.state;
+        const { results, query, searchErr } = this.state;
         const { updateBookShelf } = this.props;
         return (
             <div className="search-books">
@@ -36,7 +39,7 @@ class BooksSearch extends React.Component {
                     <Link className="close-search" to='/'>Close</Link>
                     <div className="search-books-input-wrapper">
                         <input type="text"
-                            value={this.state.query}
+                            value={query}
                             placeholder="Search by title or author"
                             onChange={this.handleChange}
                         />
@@ -44,15 +47,21 @@ class BooksSearch extends React.Component {
                     </div>
                 </div>
                 <div className="search-books-results">
-                    <ol className="books-grid">
-                        {
-                            results === undefined ? 'not found' : results.map((data, index) => (
-                                <EachBookShelf bookId={data.id} key={index} updateBookShelf={updateBookShelf} />
-                            ))
-                        }
-                    </ol>
+                    {results.length > 0 && (
+                        <div>
+                            <h3>Search {results.length} books</h3>
+                            <ol className="books-grid">
+                                {results.map(data => (
+                                    <EachBookShelf bookId={data.id} key={data.id} updateBookShelf={updateBookShelf} />
+                                ))}
+                            </ol>
+                        </div>
+                    )}
+                    {searchErr && (
+                        <h3>Search did not return any books. Please try again!</h3>
+                    )}
                 </div>
-            </div>
+            </div >
         )
     }
 }
