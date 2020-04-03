@@ -4,7 +4,7 @@
 
 ## How to Load the App
 
-You can check this app at :[heroku/](https://sheltered-beyond-93892.herokuapp.com/)
+You can check this app at :[sheltered-beyond-93892.herokuapp.com/](https://sheltered-beyond-93892.herokuapp.com/)
 
 
 ## Project Purpose:
