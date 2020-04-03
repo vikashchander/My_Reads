@@ -2,6 +2,11 @@
 
 ---
 
+## How to Load the App
+
+You can check this app at :[heroku/](https://sheltered-beyond-93892.herokuapp.com/)
+
+
 ## Project Purpose:
 
 This game was built for the Udacity React Nanodegree Program. The purpose of the project is to demonstrate understanding of the basic structure and operation of a React-based app.
