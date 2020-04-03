@@ -12,7 +12,7 @@ class BooksApp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      shelvesObject: ['']
+      shelvesObject: {}
     }
 
   }
@@ -44,7 +44,7 @@ class BooksApp extends React.Component {
             <Route exact path="/">
               <BooksShelf shelfData={this.state.shelvesObject} updateBookShelf={this.updateShelf} />
             </Route>
-            <Route exact path="/search/">
+            <Route exact path="/search">
               <BooksSearch updateBookShelf={this.updateShelf} />
             </Route>
           </Switch>

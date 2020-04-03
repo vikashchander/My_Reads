@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as BooksAPI from '../../BooksAPI';
 import EachBookShelf from '../BooksShelf/EachBookShelf';
 import { Link } from "react-router-dom";
@@ -15,7 +16,9 @@ class BooksSearch extends React.Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
-
+    componentDidUpdate() {
+        this.handleChange()
+    }
     handleChange(e) {
         this.setState({ query: e.target.value.trim() });
         if (e.target.value.trim()) {
@@ -56,5 +59,7 @@ class BooksSearch extends React.Component {
         )
     }
 }
-
+BooksSearch.propTypes = {
+    updateBookShelf: PropTypes.func,
+}
 export default BooksSearch;

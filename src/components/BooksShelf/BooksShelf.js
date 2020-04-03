@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import EachBookShelf from './EachBookShelf';
 import '../../App.css';
@@ -39,7 +40,7 @@ class BooksShelf extends React.Component {
                                             wantToRead.map((data) =>
                                                 <EachBookShelf key={data} bookId={data} updateBookShelf={updateBookShelf} />
                                             )
-                                           
+
                                     }
                                 </ol>
                             </div>
@@ -69,4 +70,9 @@ class BooksShelf extends React.Component {
     }
 }
 
+BooksShelf.propTypes = {
+    shelfData: PropTypes.object,
+    updateBookShelf: PropTypes.func
+
+}
 export default BooksShelf;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as BooksAPI from '../../BooksAPI';
 
 
@@ -59,6 +60,11 @@ class EachBookShelf extends React.Component {
             </li>
         )
     }
+}
+
+EachBookShelf.propTypes = {
+    bookId: PropTypes.string,
+    updateBookShelf: PropTypes.func
 }
 
 export default EachBookShelf;
