@@ -16,9 +16,6 @@ class BooksSearch extends React.Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
-    componentDidUpdate() {
-        this.handleChange()
-    }
     handleChange(e) {
         this.setState({ query: e.target.value.trim() });
         if (e.target.value.trim()) {
