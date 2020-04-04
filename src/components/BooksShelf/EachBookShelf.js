@@ -4,25 +4,28 @@ import * as BooksAPI from '../../BooksAPI';
 
 
 class EachBookShelf extends React.Component {
+    _isMounted = false;
     constructor(props) {
         super(props);
         this.state = {
             bookId: this.props.bookId,
             title: '',
             authors: [''],
-            description: '',
-            subtitle: '',
-            categories: [''],
             imageLinks: { thumbnail: '' },
             shelf: 'none',
-
         }
         this.handleChange = this.handleChange.bind(this)
     }
     componentDidMount() {
+        this._isMounted = true;
         BooksAPI.get(this.props.bookId).then(data => {
-            this.setState({ ...data })
+            if (this._isMounted) {
+                this.setState({ ...data })
+            }
         })
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     handleChange(e) {
